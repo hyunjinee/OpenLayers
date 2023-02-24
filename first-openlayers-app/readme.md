@@ -2,7 +2,9 @@
 
 crete-ol-app을 통해 OpenLayers 프로젝트를 생성할 수 있다.
 
-    npx create-ol-app my-app --template vite
+```bash
+npx create-ol-app my-app --template vite
+```
 
 ## Map
 
@@ -14,11 +16,11 @@ import OSM from 'ol/source/OSM';
 
 const map = new Map({
   target: 'map',
-  layers: [
-    new TileLayer({
-      source: new OSM(),
-    }),
-  ],
+  // layers: [
+  //   new TileLayer({
+  //     source: new OSM(),
+  //   }),
+  // ],
   view: new View({
     center: [0, 0],
     zoom: 7,
@@ -57,8 +59,15 @@ const map = new Map({
     zoom: 7,
     minZoom: 2,
     maxZoom: 20,
+    rotation: 0.5,
   }),
 });
 ```
 
 zoom, minZoom, maxZoom을 사용해서 지도의 사이즈를 조절할 수 있다.
+
+rotation은 말 그대로 지도를 돌릴 수 있다. 예를 들어 0.5를 주면 아래와 같이 조금 돌아간 모양의 지도를 확인할 수 있다.
+
+![](https://user-images.githubusercontent.com/63354527/221065088-53b87c50-d85d-453f-84cd-1a093e29a1f6.png)
+
+## Layers
