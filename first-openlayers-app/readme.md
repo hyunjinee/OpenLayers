@@ -1,18 +1,64 @@
 # OpenLayers + Vite
 
-This example demonstrates how the `ol` package can be used with [Vite](https://vitejs.dev/).
-
-To get started, run the following (requires Node 14+):
+crete-ol-app을 통해 OpenLayers 프로젝트를 생성할 수 있다.
 
     npx create-ol-app my-app --template vite
 
-Then change into your new `my-app` directory and start a development server (available at http://localhost:5173):
+## Map
 
-    cd my-app
-    npm start
+```js
+import './style.css';
+import { Map, View } from 'ol';
+import TileLayer from 'ol/layer/Tile';
+import OSM from 'ol/source/OSM';
 
-To generate a build ready for production:
+const map = new Map({
+  target: 'map',
+  layers: [
+    new TileLayer({
+      source: new OSM(),
+    }),
+  ],
+  view: new View({
+    center: [0, 0],
+    zoom: 7,
+  }),
+});
+```
 
-    npm run build
+Map은 위와 같은 방식의 기본 코드가 제공된다.
 
-Then deploy the contents of the `dist` directory to your server.  You can also run `npm run serve` to serve the results of the `dist` directory for preview.
+## Event
+
+map에 click이벤트는 다음과 같이 등록할 수 있다.
+
+```js
+map.on('click', (e) => {
+  console.log(e);
+});
+```
+
+이벤트 객체를 콘솔에서 확인해보자.
+
+![](https://user-images.githubusercontent.com/63354527/221063052-5e10b4e9-ffd3-4708-95cf-6b725b6bb00b.png)
+
+## View
+
+```js
+const map = new Map({
+  target: 'map',
+  layers: [
+    new TileLayer({
+      source: new OSM(),
+    }),
+  ],
+  view: new View({
+    center: [0, 0],
+    zoom: 7,
+    minZoom: 2,
+    maxZoom: 20,
+  }),
+});
+```
+
+zoom, minZoom, maxZoom을 사용해서 지도의 사이즈를 조절할 수 있다.
