@@ -17,7 +17,7 @@ function App() {
   useEffect(() => {
     if (mapElement.current) {
       const initMap = new Map({
-        target: mapElement?.current,
+        target: mapElement.current,
         layers: [
           new TileLayer({
             source: new OSM(),
