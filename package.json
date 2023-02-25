@@ -1,0 +1,8 @@
+{
+  "name": "OpenLayers",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/hyunjinee/OpenLayers",
+  "author": "hyunjin <leehj0110@kakao.com>",
+  "license": "MIT"
+}
