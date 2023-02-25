@@ -5,6 +5,7 @@ const Sidebar: React.FC = () => {
   return (
     <Wrapper>
       <SidebarIcon />
+      ㅗㅑ
     </Wrapper>
   );
 };

@@ -1,5 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { withRouter } from 'storybook-addon-react-router-v6';
 
 import Sidebar from '.';
 
@@ -11,6 +12,7 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
+  decorators: [withRouter],
 } as ComponentMeta<typeof Sidebar>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args

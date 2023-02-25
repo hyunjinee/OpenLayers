@@ -4,5 +4,8 @@
   "main": "index.js",
   "repository": "https://github.com/hyunjinee/OpenLayers",
   "author": "hyunjin <leehj0110@kakao.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "storybook-addon-react-router-v6": "^0.2.1"
+  }
 }
