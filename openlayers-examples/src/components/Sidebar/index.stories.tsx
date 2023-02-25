@@ -12,6 +12,9 @@ export default {
     backgroundColor: { control: 'color' },
   },
   decorators: [withRouter],
+  parameters: {
+    layout: 'fullscreen',
+  },
 } as ComponentMeta<typeof Sidebar>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
