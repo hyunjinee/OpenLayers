@@ -1,16 +1,50 @@
 import styled from 'styled-components';
 
 import SidebarIcon from './SidebarIcon';
+import icon1 from '../../assets/img/tab_icon_1.svg';
+import icon2 from '../../assets/img/tab_icon_2.svg';
+import icon3 from '../../assets/img/tab_icon_3.svg';
+import selectedIcon1 from '../../assets/img/tab_icon_1_selected.svg';
+import selectedIcon2 from '../../assets/img/tab_icon_2_selected.svg';
+import selectedIcon3 from '../../assets/img/tab_icon_3_selected.svg';
+export interface Menu {
+  name: string;
+  icon: string;
+  selectedIcon: string;
+}
+
+const APP_MENU: Menu[] = [
+  {
+    name: 'locations',
+    icon: icon1,
+    selectedIcon: selectedIcon1,
+  },
+  {
+    name: 'measurement',
+    icon: icon2,
+    selectedIcon: selectedIcon2,
+  },
+  {
+    name: 'layer',
+    icon: icon3,
+    selectedIcon: selectedIcon3,
+  },
+];
 
 const Sidebar: React.FC = () => {
   return (
     <Wrapper>
-      <SidebarIcon />
+      {APP_MENU.map((menu) => (
+        <SidebarIcon key={menu.name} menu={menu} isSelected={false} />
+      ))}
     </Wrapper>
   );
 };
 
-const Wrapper = styled.div``;
+const Wrapper = styled.nav`
+  min-width: 60px;
+  background: red;
+`;
 
 const IconImage = styled.img`
   width: 17px;
