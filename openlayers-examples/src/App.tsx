@@ -1,34 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { useEffect, useRef } from "react"
+import { Map, View } from "ol"
+import TileLayer from "ol/layer/Tile"
+import VectorLayer from "ol/layer/Vector"
+import VectorSource from "ol/source/Vector"
+import OSM from "ol/source/OSM"
+
+const olViewSetting = {
+  zoom: 16,
+  center: [126.9779451, 37.5662952],
+  projection: "EPSG:4326",
+}
 
 function App() {
-  const [count, setCount] = useState(0)
+  const mapElement = useRef<HTMLDivElement | null>(null)
 
-  return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+  useEffect(() => {
+    if (mapElement.current) {
+      const initMap = new Map({
+        target: mapElement?.current,
+        layers: [
+          new TileLayer({
+            source: new OSM(),
+          }),
+        ],
+        view: new View(olViewSetting),
+      })
+    }
+  }, [])
+
+  return <div id="map" ref={mapElement} />
 }
 
 export default App
