@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { MapContext } from '../SIAMap';
 import { View } from 'ol';
 import Map from 'ol/Map.js';
 import OSM from 'ol/source/OSM.js';
@@ -12,6 +11,7 @@ import {
   get as getProjection,
   transform,
 } from 'ol/proj.js';
+import { MapContext } from '@/main';
 
 interface Props {
   projection: ProjectionLike;
@@ -20,7 +20,7 @@ interface Props {
 
 export default function Projection() {
   const [projection, setProjection] = useState('EPSG:3857');
-  const map = useContext(MapContext);
+  const map = useContext(MapContext) as Map;
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setProjection(e.target.value);

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { Coordinate } from 'ol/coordinate';
 import { Map, View, MapBrowserEvent, MapEvent } from 'ol';
 import { ProjectionLike, useGeographic } from 'ol/proj';
@@ -11,6 +11,7 @@ import {
   get as getProjection,
   transform,
 } from 'ol/proj.js';
+import { MapContext } from '@/main';
 
 export interface SIAView {
   zoom: number;
@@ -36,24 +37,17 @@ export interface SIAMapProps {
   children?: React.ReactNode;
 }
 
-export const MapContext = React.createContext<Map | undefined>(undefined);
-
 export default function SIAMap({
   initial,
   width,
   height,
-  projection = 'ESPG:3857',
+  projection = 'EPSG:3857',
 
   noDefaultControls = false,
   children,
 }: SIAMapProps) {
-  // const mapRef = useRef<HTMLDivElement>(null);
-
-  // const a = useGeographic();
-
-  // console.log(a);
-
-  const [map, setMap] = React.useState<Map>();
+  const mapRef = useRef<HTMLDivElement>(null);
+  const [map, setMap] = useState<Map | null>(null);
 
   useEffect(() => {
     const map = new Map({
@@ -62,7 +56,6 @@ export default function SIAMap({
           source: new OSM(),
         }),
       ],
-      target: 'map',
       view: new View({
         ...initial,
         projection,
@@ -70,11 +63,16 @@ export default function SIAMap({
     });
 
     setMap(map);
+    map.setTarget(mapRef.current as HTMLDivElement);
+
+    return () => map.setTarget(undefined);
   }, []);
 
   return (
     <MapContext.Provider value={map}>
-      <div id="map">{children}</div>
+      <div id="map" ref={mapRef}>
+        {children}
+      </div>
     </MapContext.Provider>
   );
 }
