@@ -5,19 +5,34 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App';
 import './index.css';
 import Sidebar from './components/Sidebar';
+import SIAMap from './components/SIAMap/SIAMap';
+
+const olViewSetting = {
+  zoom: 16,
+  center: [127.9779451, 37.5662952],
+  projection: 'EPSG:4326',
+};
 
 const router = createBrowserRouter([
+  // {
+  //   path: '/',
+  //   element: <Sidebar />,
+  //   errorElement: <Sidebar />,
+  // },
   {
     path: '/',
-    element: <Sidebar />,
+    element: <SIAMap initial={olViewSetting} />,
+    errorElement: '에러',
   },
+
   {
-    path: '/',
+    path: '*',
     element: <App />,
+    errorElement: '에러',
   },
 ]);
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+ReactDOM.createRoot(document.getElementById('root') as HTMLDivElement).render(
   <React.StrictMode>
     <RouterProvider router={router} />
   </React.StrictMode>,
