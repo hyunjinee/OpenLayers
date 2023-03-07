@@ -5,11 +5,13 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App';
 import './index.css';
 import Sidebar from './components/Sidebar';
-import SIAMap from './components/SIAMap/SIAMap';
+import SIAMap from './components/SIAMap';
+import Projection from './components/Projection';
+import ProjectionAndScale from './pages/ProjectionAndScale';
 
 const olViewSetting = {
-  zoom: 16,
-  center: [127.9779451, 37.5662952],
+  zoom: 8,
+  center: [126.9779451, 37.5662952],
   projection: 'EPSG:4326',
 };
 
@@ -19,9 +21,10 @@ const router = createBrowserRouter([
   //   element: <Sidebar />,
   //   errorElement: <Sidebar />,
   // },
+
   {
-    path: '/',
-    element: <SIAMap initial={olViewSetting} />,
+    path: '/projection-and-scale',
+    element: <ProjectionAndScale />,
     errorElement: '에러',
   },
 
