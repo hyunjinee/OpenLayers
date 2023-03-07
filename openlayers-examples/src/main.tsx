@@ -40,7 +40,7 @@ const router = createBrowserRouter([
   },
 
   {
-    path: '*',
+    path: '/',
     element: <App />,
     errorElement: '에러',
   },
