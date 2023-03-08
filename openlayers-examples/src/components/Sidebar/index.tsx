@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 import SidebarIcon from './SidebarIcon';
-import icon1 from '../../assets/img/tab_icon_1.svg';
-import icon2 from '../../assets/img/tab_icon_2.svg';
-import icon3 from '../../assets/img/tab_icon_3.svg';
-import selectedIcon1 from '../../assets/img/tab_icon_1_selected.svg';
+import icon1 from '@/assets/img/tab_icon_1.svg';
+import icon2 from '@/assets/img/tab_icon_2.svg';
+import icon3 from '@/assets/img/tab_icon_3.svg';
+import selectedIcon1 from '@/assets/img/tab_icon_1_selected.svg';
 import selectedIcon2 from '@/assets/img/tab_icon_2_selected.svg';
 import selectedIcon3 from '@/assets/img/tab_icon_3_selected.svg';
 export interface Menu {

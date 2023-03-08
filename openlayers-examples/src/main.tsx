@@ -31,8 +31,6 @@ const router = createBrowserRouter(
   ),
 );
 
-export const MapContext = React.createContext<Map | null>(null);
-
 ReactDOM.createRoot(document.getElementById('root') as HTMLDivElement).render(
   <React.StrictMode>
     <RouterProvider router={router}></RouterProvider>

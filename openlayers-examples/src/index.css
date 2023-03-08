@@ -22,6 +22,8 @@ body {
   height: 100%;
   position: relative;
   font-size: 62.5%;
+
+  box-sizing: border-box;
 }
 
 #root {

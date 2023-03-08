@@ -11,7 +11,7 @@ import {
   get as getProjection,
   transform,
 } from 'ol/proj.js';
-import { MapContext } from '@/main';
+import { MapContext } from './MapContext';
 
 export interface SIAView {
   zoom: number;
