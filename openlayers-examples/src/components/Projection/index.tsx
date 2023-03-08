@@ -30,6 +30,7 @@ export default function Projection() {
     if (!map) {
       return;
     }
+
     const currentView = map.getView();
     const currentProjection = currentView.getProjection();
     const newProjection = getProjection(projection);
@@ -65,8 +66,6 @@ export default function Projection() {
 
       map.setView(newView);
     }
-
-    console.log('effect', projection);
   }, [map, projection]);
 
   return (

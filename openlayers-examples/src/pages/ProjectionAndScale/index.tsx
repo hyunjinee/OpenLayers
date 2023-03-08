@@ -11,12 +11,8 @@ const olViewSetting = {
 };
 
 export default function ProjectionAndScale() {
-  const [projection, setProjection] = useState('EPSG:3857');
-
-  console.log(projection, '?');
-
   return (
-    <SIAMap initial={olViewSetting} projection={projection}>
+    <SIAMap initial={olViewSetting}>
       <Projection />
     </SIAMap>
   );

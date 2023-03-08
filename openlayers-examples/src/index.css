@@ -1,4 +1,5 @@
-@import '../node_modules/ol/ol.css';
+/* @import '../node_modules/ol/ol.css'; */
+@import './ol.css';
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -36,12 +37,32 @@ body {
   top: 0;
   bottom: 0; */
   position: relative;
-  height: 100%;
+  top: 5.2rem;
+  height: calc(100% - 5.2rem);
   width: 100%;
-
-  /* background: red; */
 }
 
+/* .ol-zoom-out {
+  border-radius: 0 0 0.2rem 0.2rem;
+  width: 3rem;
+  height: 3rem;
+} */
+
+/* .ol-zoom-in {
+  border-radius: 0 0 0.2rem 0.2rem;
+  width: 1.375rem;
+  height: 1.375rem;
+}
+
+.ol-zoom {
+  width: auto;
+  height: auto;
+}
+
+.ol-control {
+  height: 1.375rem;
+  width: 1.375rem;
+} */
 /* 
 a {
   font-weight: 500;

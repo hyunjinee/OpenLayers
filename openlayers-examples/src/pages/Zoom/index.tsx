@@ -1,8 +1,11 @@
 import { useContext } from 'react';
 import styled from 'styled-components';
 import { Map } from 'ol';
+
 import Button from '@/components/Button';
-import { MapContext } from '@/main';
+import { MapContext } from '@/components/SIAMap/MapContext';
+import SIAMap from '@/components/SIAMap';
+import ZoomControlGroup from '@/components/ZoomControlGroup';
 
 const olViewSetting = {
   zoom: 5,
@@ -12,9 +15,9 @@ const olViewSetting = {
 export default function Zoom() {
   const map = useContext(MapContext) as Map;
 
-  const handleZoomIn = () => {
-    console.log('zoomIn');
+  console.log(map, '/');
 
+  const handleZoomIn = () => {
     if (!map) {
       return;
     }
@@ -43,22 +46,8 @@ export default function Zoom() {
   };
 
   return (
-    <ZoomControlGroup>
-      <Button onClick={handleZoomIn}>+</Button>
-      <Button onClick={handleZoomOut}>-</Button>
-    </ZoomControlGroup>
+    <SIAMap initial={olViewSetting}>
+      <ZoomControlGroup />
+    </SIAMap>
   );
 }
-
-const ZoomControlGroup = styled.div`
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-
-  z-index: 20;
-
-  button {
-    width: 30px;
-    height: 30px;
-  }
-`;

@@ -6,62 +6,26 @@ import {
   Route,
   RouterProvider,
 } from 'react-router-dom';
-import { Map } from 'ol';
 
 import App from './App';
-import './index.css';
 import Sidebar from './components/Sidebar';
-import SIAMap from './components/SIAMap';
-import Projection from './components/Projection';
 import ProjectionAndScale from './pages/ProjectionAndScale';
 import Zoom from './pages/Zoom';
 import Layout from './components/Layout';
-
-const olViewSetting = {
-  zoom: 8,
-  center: [126.9779451, 37.5662952],
-  // projection: 'EPSG:4326',
-};
+import './index.css';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route element={<Layout />} errorElement={'에러요'}>
       <Route path="/" element={<App />} />
+      <Route path="/zoom" element={<Zoom />} />
+      <Route path="/projection-and-scale" element={<ProjectionAndScale />} />
     </Route>,
   ),
 );
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLDivElement).render(
   <React.StrictMode>
-    <RouterProvider router={router}></RouterProvider>
+    <RouterProvider router={router} />
   </React.StrictMode>,
 );
-
-// [
-//   // {
-//   //   path: '/',
-//   //   element: <Sidebar />,
-//   //   errorElement: <Sidebar />,
-//   // },
-
-//   {
-//     path: '/zoom',
-//     element: (
-//       <SIAMap initial={olViewSetting}>
-//         <Zoom />
-//       </SIAMap>
-//     ),
-//     errorElement: '에러',
-//   },
-//   {
-//     path: '/projection-and-scale',
-//     element: <ProjectionAndScale />,
-//     errorElement: '에러',
-//   },
-
-//   {
-//     path: '/',
-//     element: <App />,
-//     errorElement: '에러',
-//   },
-// ]

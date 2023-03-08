@@ -42,15 +42,15 @@ const Sidebar: React.FC = () => {
 };
 
 const Wrapper = styled.nav`
-  min-width: 60px;
-  box-shadow: 0px 0.6px 1.8px rgba(0, 0, 0, 0.1),
+  min-width: 6rem;
+  box-shadow: 0rem 0.6px 1.8px rgba(0, 0, 0, 0.1),
     0px 3.2px 7.2px rgba(0, 0, 0, 0.13);
 `;
 
 const IconImage = styled.img`
-  width: 17px;
-  height: 15.94px;
-  margin-top: calc(22px - 8px);
+  width: 1.7rem;
+  height: 1.594rem;
+  margin-top: calc(2.2rem - 0.8rem);
 `;
 
 export default Sidebar;
