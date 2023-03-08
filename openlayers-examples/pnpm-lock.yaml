@@ -17,6 +17,7 @@ specifiers:
   ol: ^7.2.2
   react: ^18.2.0
   react-dom: ^18.2.0
+  react-icons: ^4.8.0
   react-router-dom: ^6.8.1
   storybook-addon-react-router-v6: ^0.2.1
   styled-components: ^5.3.6
@@ -27,6 +28,7 @@ dependencies:
   ol: 7.3.0
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  react-icons: 4.8.0_react@18.2.0
   react-router-dom: 6.8.2_biqbaboplfbrettd7655fr4n2y
   styled-components: 5.3.8_biqbaboplfbrettd7655fr4n2y
 
@@ -9634,6 +9636,14 @@ packages:
       react-dom: 18.2.0_react@18.2.0
       react-is: 17.0.2
     dev: true
+
+  /react-icons/4.8.0_react@18.2.0:
+    resolution: {integrity: sha512-N6+kOLcihDiAnj5Czu637waJqSnwlMNROzVZMhfX68V/9bu9qHaMIJC4UdozWoOk57gahFCNHwVvWzm0MTzRjg==}
+    peerDependencies:
+      react: '*'
+    dependencies:
+      react: 18.2.0
+    dev: false
 
   /react-inspector/5.1.1_react@18.2.0:
     resolution: {integrity: sha512-GURDaYzoLbW8pMGXwYPDBIv6nqei4kK7LPRZ9q9HCZF54wqXz/dnylBp/kfE9XmekBhHvLDdcYeyIwSrvtOiWg==}

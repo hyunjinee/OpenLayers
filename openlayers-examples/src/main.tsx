@@ -11,15 +11,20 @@ import App from './App';
 import Sidebar from './components/Sidebar';
 import ProjectionAndScale from './pages/ProjectionAndScale';
 import Zoom from './pages/Zoom';
-import Layout from './components/Layout';
+import Layout from './components/Layout/NavigationLayout';
 import './index.css';
+import OSM from './pages/OSM';
+import MainLayout from './components/Layout/MainLayout';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route element={<Layout />} errorElement={'에러요'}>
-      <Route path="/" element={<App />} />
-      <Route path="/zoom" element={<Zoom />} />
-      <Route path="/projection-and-scale" element={<ProjectionAndScale />} />
+      <Route element={<MainLayout />}>
+        <Route path="/" element={<App />} />
+        <Route path="osm" element={<OSM />} />
+        <Route path="/zoom" element={<Zoom />} />
+        <Route path="/projection-and-scale" element={<ProjectionAndScale />} />
+      </Route>
     </Route>,
   ),
 );

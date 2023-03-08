@@ -12,20 +12,19 @@ export default function App() {
     <Wrapper>
       <NavLink to="/projection-and-scale">Projection And Scale</NavLink>
       <br />
-      <NavLink to="/zoom">Zoom</NavLink>
+      <NavLink to="/zoom">Zoom in & out</NavLink>
       <br />
+      <NavLink to="/osm">OSM</NavLink>
     </Wrapper>
   );
 }
 
 const Wrapper = styled.div`
   position: relative;
-  height: calc(100% - 5.2rem);
-  top: 5.2rem;
+  height: 100%;
 
   display: flex;
   flex-direction: column;
-
   align-items: center;
   justify-content: center;
 
