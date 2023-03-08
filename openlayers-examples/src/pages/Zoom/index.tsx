@@ -1,10 +1,6 @@
-import { useContext } from 'react';
-import styled from 'styled-components';
-
-import Button from '@/components/Button';
+import { osmLayer } from '@/shared/layers';
 import SIAMap from '@/components/SIAMap';
 import ZoomControlGroup from '@/components/ZoomControlGroup';
-import { osmLayer } from '@/shared/layers';
 
 const olViewSetting = {
   zoom: 5,

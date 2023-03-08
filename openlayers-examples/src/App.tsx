@@ -15,6 +15,11 @@ export default function App() {
       <NavLink to="/zoom">Zoom in & out</NavLink>
       <br />
       <NavLink to="/osm">OSM</NavLink>
+      <br />
+      <NavLink to="/animated-gif">Animated GIF</NavLink>
+
+      <br />
+      <NavLink to="/canvas-tiles">Canvas Tiles</NavLink>
     </Wrapper>
   );
 }

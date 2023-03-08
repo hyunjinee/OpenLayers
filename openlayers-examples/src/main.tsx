@@ -12,9 +12,12 @@ import Sidebar from './components/Sidebar';
 import ProjectionAndScale from './pages/ProjectionAndScale';
 import Zoom from './pages/Zoom';
 import Layout from './components/Layout/NavigationLayout';
-import './index.css';
 import OSM from './pages/OSM';
 import MainLayout from './components/Layout/MainLayout';
+import AnimatedGIF from './pages/AnimatedGIF';
+import CanvasTiles from './pages/CanvasTiles';
+
+import './index.css';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -24,6 +27,8 @@ const router = createBrowserRouter(
         <Route path="osm" element={<OSM />} />
         <Route path="/zoom" element={<Zoom />} />
         <Route path="/projection-and-scale" element={<ProjectionAndScale />} />
+        <Route path="/animated-gif" element={<AnimatedGIF />} />
+        <Route path="/canvas-tiles" element={<CanvasTiles />} />
       </Route>
     </Route>,
   ),
