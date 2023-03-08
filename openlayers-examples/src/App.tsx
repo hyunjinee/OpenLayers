@@ -11,18 +11,12 @@ export default function App() {
   return (
     <Wrapper>
       <NavLink to="/projection-and-scale">Projection And Scale</NavLink>
-      <br />
       <NavLink to="/zoom">Zoom in & out</NavLink>
-      <br />
       <NavLink to="/osm">OSM</NavLink>
-      <br />
       <NavLink to="/animated-gif">Animated GIF</NavLink>
-
-      <br />
       <NavLink to="/canvas-tiles">Canvas Tiles</NavLink>
-
-      <br />
       <NavLink to="/modify-features">Modify Features</NavLink>
+      <NavLink to="/scale-line">Scale Line</NavLink>
     </Wrapper>
   );
 }

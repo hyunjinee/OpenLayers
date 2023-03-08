@@ -19,6 +19,7 @@ import CanvasTiles from './pages/CanvasTiles';
 
 import './index.css';
 import ModifyFeatures from './pages/ModifyFeatures';
+import ScaleLine from './pages/ScaleLine';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -31,6 +32,7 @@ const router = createBrowserRouter(
         <Route path="/animated-gif" element={<AnimatedGIF />} />
         <Route path="/canvas-tiles" element={<CanvasTiles />} />
         <Route path="/modify-features" element={<ModifyFeatures />} />
+        <Route path="/scale-line" element={<ScaleLine />} />
       </Route>
     </Route>,
   ),
