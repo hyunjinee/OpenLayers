@@ -3,6 +3,7 @@ import Projection from '@/components/Projection';
 import SIAMap from '@/components/SIAMap';
 
 import { getPointResolution, get as getProjection, transform } from 'ol/proj';
+import { osmLayer } from '@/shared/layers';
 
 const olViewSetting = {
   zoom: 5,
@@ -12,7 +13,7 @@ const olViewSetting = {
 
 export default function ProjectionAndScale() {
   return (
-    <SIAMap initial={olViewSetting}>
+    <SIAMap initial={olViewSetting} layers={[osmLayer]}>
       <Projection />
     </SIAMap>
   );

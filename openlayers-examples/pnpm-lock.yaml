@@ -9,12 +9,14 @@ specifiers:
   '@storybook/builder-vite': ^0.4.2
   '@storybook/react': ^6.5.16
   '@storybook/testing-library': ^0.0.13
+  '@types/proj4': ^2.5.2
   '@types/react': ^18.0.27
   '@types/react-dom': ^18.0.10
   '@types/styled-components': ^5.1.26
   '@vitejs/plugin-react': ^3.1.0
   babel-loader: ^8.3.0
   ol: ^7.2.2
+  proj4: ^2.8.1
   react: ^18.2.0
   react-dom: ^18.2.0
   react-icons: ^4.8.0
@@ -26,6 +28,7 @@ specifiers:
 
 dependencies:
   ol: 7.3.0
+  proj4: 2.8.1
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-icons: 4.8.0_react@18.2.0
@@ -41,6 +44,7 @@ devDependencies:
   '@storybook/builder-vite': 0.4.2_soa7ib3b7pjtnt2s5grblyylo4
   '@storybook/react': 6.5.16_6mbplxbx6s7x4hmdmervij2kcu
   '@storybook/testing-library': 0.0.13_biqbaboplfbrettd7655fr4n2y
+  '@types/proj4': 2.5.2
   '@types/react': 18.0.28
   '@types/react-dom': 18.0.11
   '@types/styled-components': 5.1.26
@@ -3669,6 +3673,10 @@ packages:
 
   /@types/pretty-hrtime/1.0.1:
     resolution: {integrity: sha512-VjID5MJb1eGKthz2qUerWT8+R4b9N+CHvGCzg9fn4kWZgaF9AhdYikQio3R7wV8YY1NsQKPaCwKz1Yff+aHNUQ==}
+    dev: true
+
+  /@types/proj4/2.5.2:
+    resolution: {integrity: sha512-/Nmfn9p08yaYw6xo5f2b0L+2oHk2kZeOkp5v+4VCeNfq+ETlLQbmHmC97/pjDIEZy8jxwz7pdPpwNzDHM5cuJw==}
     dev: true
 
   /@types/prop-types/15.7.5:
@@ -8296,6 +8304,10 @@ packages:
     engines: {node: '>= 0.6'}
     dev: true
 
+  /mgrs/1.0.0:
+    resolution: {integrity: sha512-awNbTOqCxK1DBGjalK3xqWIstBZgN6fxsMSiXLs9/spqWkF2pAhb2rrYCFSsr1/tT7PhcDGjZndG8SWYn0byYA==}
+    dev: false
+
   /microevent.ts/0.1.1:
     resolution: {integrity: sha512-jo1OfR4TaEwd5HOrt5+tAZ9mqT4jmpNAusXtyfNzqVm9uiSYFZlKM1wYL4oU7azZW/PxQW53wM0S6OR1JHNa2g==}
     dev: true
@@ -9356,6 +9368,13 @@ packages:
     resolution: {integrity: sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==}
     engines: {node: '>=0.4.0'}
     dev: true
+
+  /proj4/2.8.1:
+    resolution: {integrity: sha512-KK/bgM6oIwxdpeCaJ/JK3V1D8LMQCKKKzndab4/pYQNd+NVKTcddUNtds053Q110GxTALXVjx98L9f5q8xPVXQ==}
+    dependencies:
+      mgrs: 1.0.0
+      wkt-parser: 1.3.2
+    dev: false
 
   /promise-inflight/1.0.1:
     resolution: {integrity: sha512-6zWPyEOFaQBJYcGMHBKTKJ3u6TBsnMFOIZSa6ce1e/ZrrsOlnHRHbabMjLiBYKp+n44X9eUI6VUPaukCXHuG4g==}
@@ -11661,6 +11680,10 @@ packages:
     dependencies:
       string-width: 4.2.3
     dev: true
+
+  /wkt-parser/1.3.2:
+    resolution: {integrity: sha512-A26BOOo7sHAagyxG7iuRhnKMO7Q3mEOiOT4oGUmohtN/Li5wameeU4S6f8vWw6NADTVKljBs8bzA8JPQgSEMVQ==}
+    dev: false
 
   /word-wrap/1.2.3:
     resolution: {integrity: sha512-Hz/mrNwitNRh/HUAtM/VT/5VH+ygD6DV7mYKZAtHOrbs8U7lvPS6xf7EJKMF0uW1KJCl0H701g3ZGus+muE5vQ==}

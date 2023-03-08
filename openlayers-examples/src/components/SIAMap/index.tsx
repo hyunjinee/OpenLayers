@@ -17,18 +17,19 @@ export interface SIAView {
   zoom: number;
   resolution?: number;
   center: Coordinate;
+  projection?: ProjectionLike;
 }
 
 export interface SIAMapProps {
-  initial: SIAView;
+  initial?: SIAView;
 
   width?: number | string;
   height?: number | string;
 
-  projection?: ProjectionLike;
-
   minZoom?: number;
   maxZoom?: number;
+
+  layers?: any;
 
   onClick?: (event: MapBrowserEvent<UIEvent>) => boolean | void;
 
@@ -38,10 +39,15 @@ export interface SIAMapProps {
 }
 
 export default function SIAMap({
-  initial,
+  initial = {
+    zoom: 5,
+    center: [0, 0],
+    projection: 'EPSG:3857',
+  },
   width,
   height,
-  projection = 'EPSG:3857',
+
+  layers,
 
   noDefaultControls = false,
   children,
@@ -51,14 +57,9 @@ export default function SIAMap({
 
   useEffect(() => {
     const map = new Map({
-      layers: [
-        new TileLayer({
-          source: new OSM(),
-        }),
-      ],
+      layers,
       view: new View({
         ...initial,
-        projection,
       }),
     });
 

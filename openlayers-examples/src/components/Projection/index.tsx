@@ -2,9 +2,6 @@ import { useContext, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { View } from 'ol';
 import Map from 'ol/Map.js';
-import OSM from 'ol/source/OSM.js';
-import TileLayer from 'ol/layer/Tile.js';
-import { ScaleLine, defaults as defaultControls } from 'ol/control.js';
 import {
   ProjectionLike,
   getPointResolution,
@@ -12,11 +9,6 @@ import {
   transform,
 } from 'ol/proj.js';
 import { MapContext } from '../SIAMap/MapContext';
-
-interface Props {
-  projection: ProjectionLike;
-  setProjection: React.Dispatch<React.SetStateAction<string>>;
-}
 
 export default function Projection() {
   const [projection, setProjection] = useState('EPSG:3857');
@@ -84,8 +76,8 @@ export default function Projection() {
 
 const Wrapper = styled.div`
   position: absolute;
-  bottom: 20px;
-  left: 20px;
+  bottom: 2rem;
+  left: 2rem;
 
   z-index: 10;
 
