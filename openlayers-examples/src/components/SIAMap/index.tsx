@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { Coordinate } from 'ol/coordinate';
-import { Map, View, MapBrowserEvent, MapEvent } from 'ol';
+import { Map, View, MapBrowserEvent, MapEvent, Collection } from 'ol';
 import { ProjectionLike, useGeographic } from 'ol/proj';
 import TileLayer from 'ol/layer/Tile';
 import OSM from 'ol/source/OSM';
@@ -12,6 +12,7 @@ import {
   transform,
 } from 'ol/proj.js';
 import { MapContext } from './MapContext';
+import { Interaction } from 'ol/interaction';
 
 export interface SIAView {
   zoom: number;
@@ -35,6 +36,8 @@ export interface SIAMapProps {
 
   noDefaultControls?: boolean;
 
+  interactions?: Collection<Interaction>;
+
   children?: React.ReactNode;
 }
 
@@ -49,6 +52,8 @@ export default function SIAMap({
 
   layers,
 
+  interactions,
+
   noDefaultControls = false,
   children,
 }: SIAMapProps) {
@@ -61,6 +66,7 @@ export default function SIAMap({
       view: new View({
         ...initial,
       }),
+      interactions,
     });
 
     setMap(map);

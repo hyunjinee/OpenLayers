@@ -18,6 +18,7 @@ import AnimatedGIF from './pages/AnimatedGIF';
 import CanvasTiles from './pages/CanvasTiles';
 
 import './index.css';
+import ModifyFeatures from './pages/ModifyFeatures';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -29,6 +30,7 @@ const router = createBrowserRouter(
         <Route path="/projection-and-scale" element={<ProjectionAndScale />} />
         <Route path="/animated-gif" element={<AnimatedGIF />} />
         <Route path="/canvas-tiles" element={<CanvasTiles />} />
+        <Route path="/modify-features" element={<ModifyFeatures />} />
       </Route>
     </Route>,
   ),

@@ -20,6 +20,9 @@ export default function App() {
 
       <br />
       <NavLink to="/canvas-tiles">Canvas Tiles</NavLink>
+
+      <br />
+      <NavLink to="/modify-features">Modify Features</NavLink>
     </Wrapper>
   );
 }
