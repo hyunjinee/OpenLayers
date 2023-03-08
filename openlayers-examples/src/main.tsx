@@ -1,6 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+} from 'react-router-dom';
 import { Map } from 'ol';
 
 import App from './App';
@@ -10,6 +15,7 @@ import SIAMap from './components/SIAMap';
 import Projection from './components/Projection';
 import ProjectionAndScale from './pages/ProjectionAndScale';
 import Zoom from './pages/Zoom';
+import Layout from './components/Layout';
 
 const olViewSetting = {
   zoom: 8,
@@ -17,34 +23,13 @@ const olViewSetting = {
   // projection: 'EPSG:4326',
 };
 
-const router = createBrowserRouter([
-  // {
-  //   path: '/',
-  //   element: <Sidebar />,
-  //   errorElement: <Sidebar />,
-  // },
-
-  {
-    path: '/zoom',
-    element: (
-      <SIAMap initial={olViewSetting}>
-        <Zoom />
-      </SIAMap>
-    ),
-    errorElement: '에러',
-  },
-  {
-    path: '/projection-and-scale',
-    element: <ProjectionAndScale />,
-    errorElement: '에러',
-  },
-
-  {
-    path: '/',
-    element: <App />,
-    errorElement: '에러',
-  },
-]);
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route element={<Layout />} errorElement={'에러요'}>
+      <Route path="/" element={<App />} />
+    </Route>,
+  ),
+);
 
 export const MapContext = React.createContext<Map | null>(null);
 
@@ -53,3 +38,32 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLDivElement).render(
     <RouterProvider router={router}></RouterProvider>
   </React.StrictMode>,
 );
+
+// [
+//   // {
+//   //   path: '/',
+//   //   element: <Sidebar />,
+//   //   errorElement: <Sidebar />,
+//   // },
+
+//   {
+//     path: '/zoom',
+//     element: (
+//       <SIAMap initial={olViewSetting}>
+//         <Zoom />
+//       </SIAMap>
+//     ),
+//     errorElement: '에러',
+//   },
+//   {
+//     path: '/projection-and-scale',
+//     element: <ProjectionAndScale />,
+//     errorElement: '에러',
+//   },
+
+//   {
+//     path: '/',
+//     element: <App />,
+//     errorElement: '에러',
+//   },
+// ]
