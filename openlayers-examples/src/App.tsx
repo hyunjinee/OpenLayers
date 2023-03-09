@@ -13,10 +13,10 @@ export default function App() {
       <NavLink to="/projection-and-scale">Projection And Scale</NavLink>
       <NavLink to="/zoom">Zoom in & out</NavLink>
       <NavLink to="/osm">OSM</NavLink>
-      <NavLink to="/animated-gif">Animated GIF</NavLink>
+      <NavLink to="/animated-gif">Animated GIF (TODO)</NavLink>
       <NavLink to="/canvas-tiles">Canvas Tiles</NavLink>
       <NavLink to="/modify-features">Modify Features</NavLink>
-      <NavLink to="/scale-line">Scale Line</NavLink>
+      <NavLink to="/scale-line">Scale Line (TODO)</NavLink>
     </Wrapper>
   );
 }
