@@ -1,11 +1,8 @@
 import { useEffect, useRef } from 'react';
-import { Map, View } from 'ol';
-import TileLayer from 'ol/layer/Tile';
-import VectorLayer from 'ol/layer/Vector';
-import VectorSource from 'ol/source/Vector';
-import OSM from 'ol/source/OSM';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+
+import Search from '@/components/Search';
 
 export default function App() {
   return (

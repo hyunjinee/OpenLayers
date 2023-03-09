@@ -43,8 +43,8 @@ const Sidebar: React.FC = () => {
 
 const Wrapper = styled.nav`
   min-width: 6rem;
-  box-shadow: 0rem 0.6px 1.8px rgba(0, 0, 0, 0.1),
-    0px 3.2px 7.2px rgba(0, 0, 0, 0.13);
+  box-shadow: 0rem 0.06rem 0.18rem rgba(0, 0, 0, 0.1),
+    0rem 0.32rem 0.72rem rgba(0, 0, 0, 0.13);
 `;
 
 const IconImage = styled.img`

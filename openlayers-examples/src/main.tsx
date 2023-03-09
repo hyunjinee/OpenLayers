@@ -8,18 +8,18 @@ import {
 } from 'react-router-dom';
 
 import App from './App';
-import Sidebar from './components/Sidebar';
-import ProjectionAndScale from './pages/ProjectionAndScale';
-import Zoom from './pages/Zoom';
-import Layout from './components/Layout/NavigationLayout';
-import OSM from './pages/OSM';
-import MainLayout from './components/Layout/MainLayout';
-import AnimatedGIF from './pages/AnimatedGIF';
-import CanvasTiles from './pages/CanvasTiles';
+import ProjectionAndScale from '@/pages/ProjectionAndScale';
+import Zoom from '@/pages/Zoom';
+import OSM from '@/pages/OSM';
+import ScaleLine from '@/pages/ScaleLine';
+import AnimatedGIF from '@/pages/AnimatedGIF';
+import CanvasTiles from '@/pages/CanvasTiles';
+import ModifyFeatures from '@/pages/ModifyFeatures';
+import MainLayout from '@/components/Layout/MainLayout';
+import Layout from '@/components/Layout/NavigationLayout';
+import Sidebar from '@/components/Sidebar';
 
 import './index.css';
-import ModifyFeatures from './pages/ModifyFeatures';
-import ScaleLine from './pages/ScaleLine';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
